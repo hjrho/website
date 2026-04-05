@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hye Jin Rho</title>
+<style>
+  html { scroll-behavior: smooth; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #222;
+    background: #fff;
+  }
+  a { color: #1a5494; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* TOP NAV */
+  .topnav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    z-index: 1000;
+    padding: 0 48px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .topnav .nav-name { font-size: 15px; font-weight: bold; color: #222; text-decoration: none; }
+  .topnav .nav-name:hover { text-decoration: none; }
+  .topnav .nav-links { display: flex; gap: 28px; }
+  .topnav .nav-links a { font-size: 13px; color: #555; text-decoration: none; }
+  .topnav .nav-links a:hover { color: #1a5494; }
+
+  /* PAGE LAYOUT */
+  .page-wrapper {
+    display: flex;
+    margin-top: 50px;
+  }
+
+  /* FIXED SIDEBAR */
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    padding: 40px 28px;
+    border-right: 1px solid #eeeeee;
+    background: #fff;
+    overflow-y: auto;
+  }
+  .sidebar img {
+    width: 100%;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .sidebar h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .sidebar .meta {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .sidebar hr {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 14px 0;
+  }
+  .sidebar nav a {
+    display: block;
+    font-size: 13px;
+    color: #1a5494;
+    margin-bottom: 7px;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    margin-left: 220px;
+    flex: 1;
+  }
+
+  /* SECTIONS */
+  .section {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    padding: 60px 64px 40px;
+  }
+  #about {
+    padding-top: 120px;
+  }
+  .section-inner {
+    max-width: 680px;
+    width: 100%;
+  }
+  .section-white { background: #fff; }
+  .section-light { background: #f8f7f4; }
+
+  /* BIO */
+  .bio-text p { font-size: 15px; line-height: 1.75; margin-bottom: 14px; color: #333; }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* PUBLICATIONS */
+  .pub-item { margin-bottom: 22px; }
+  .pub-item .pub-title { font-weight: bold; color: #1a5494; font-size: 15px; line-height: 1.4; }
+  .pub-item .pub-title.black { color: #222; }
+  .pub-item .pub-authors { font-size: 13px; color: #666; margin-top: 3px; }
+  .pub-item .pub-journal { font-size: 13px; color: #555; font-style: italic; margin-top: 2px; }
+  .pub-item .pub-status { font-size: 12px; color: #999; margin-top: 3px; }
+
+  /* POLICY */
+  .policy-intro { font-size: 14px; color: #555; margin-bottom: 24px; line-height: 1.7; }
+  .policy-item { margin-bottom: 14px; font-size: 14px; }
+  .policy-meta { font-size: 13px; color: #777; margin-top: 2px; }
+
+  /* TEACHING */
+  .teaching-intro { font-size: 15px; line-height: 1.75; margin-bottom: 28px; color: #333; }
+  .course-item { margin-bottom: 22px; }
+  .course-name { font-weight: bold; font-size: 15px; }
+  .course-desc { font-size: 14px; color: #555; margin-top: 5px; line-height: 1.65; }
+  .korea-photo { margin-top: 28px; }
+  .korea-photo img { width: 100%; max-width: 520px; display: block; border-radius: 3px; }
+  .korea-photo p { font-size: 12px; color: #999; margin-top: 6px; }
+
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; }
+    .topnav { padding: 0 20px; }
+    .topnav .nav-links { display: none; }
+    .section { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <a href="#about" class="nav-name">Hye Jin Rho</a>
+  <div class="nav-links">
+    <a href="#publications">Publications</a>
+    <a href="#working-papers">Working Papers</a>
+    <a href="#policy">Policy Work</a>
+    <a href="#teaching">Teaching</a>
+    <a href="rho-cv-2026.pdf" target="_blank">CV</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- FIXED SIDEBAR -->
+  <div class="sidebar">
+    <img src="headshot.jpg" alt="Hye Jin Rho">
+    <h1>Hye Jin Rho</h1>
+    <div class="meta">
+      Assistant Professor<br>
+      School of Human Resources<br>
+      &amp; Labor Relations<br>
+      Michigan State University<br><br>
+      <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cab8a2a5a2a08aa7b9bfe4afaebf">[email&#160;protected]</a><br>
+      S414 South Kedzie Hall<br>
+      East Lansing, MI 48824
+    </div>
+    <hr>
+    <nav>
+      <a href="https://scholar.google.com/citations?user=qA4ECu0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="rho-cv-2026.pdf" target="_blank">CV</a>
+    </nav>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- BIO -->
+    <section id="about" class="section section-white">
+      <div class="section-inner">
+        <div class="bio-text">
+          <p>I'm a labor scholar and an assistant professor at the School of Human Resources and Labor Relations at Michigan State University. My research examines how changes in work and organizations affect workers — their pay, voice, well-being, and power in the workplace. I study three interconnected issues: the rise of algorithmic management and digital technologies in the workplace; the growth of outsourcing and multi-layered labor contracting arrangements; and shifting employer skill demands and worker job preferences. I use both quantitative and qualitative methods, drawing on proprietary firm-level datasets, original surveys, interviews, field experiments, and restricted U.S. Census data.</p>
+          <p>I received my PhD from MIT Sloan School of Management with the Institute for Work and Employment Research (IWER) and worked as a Postdoctoral Fellow and an Economist at the Center for Economic and Policy Research (CEPR).</p>
+          <p>My research has been funded by the National Science Foundation, Russell Sage Foundation, and Alfred P. Sloan Foundation and appeared in <em>The Wall Street Journal</em>, <em>The New York Times</em>, <em>The Atlantic</em>, <em>Vox</em>, CBS News, MIT Technology Review, and cited in a U.S. Senate briefing, among others.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section section-light">
+      <div class="section-inner">
+        <div class="section-title">Publications</div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://dl.acm.org/doi/full/10.1145/3715336.3735704" target="_blank">Working Together: Algorithmic Management and Peer Relationships in the Hospitality Industry</a></div>
+          <div class="pub-authors">(with Franchesca Spektor, Sarah E. Fox, Somang Min, Grace Sarfo, Betsy Stringam, Christine Riordan, Ben Begleiter, and Jodi Forlizzi)</div>
+          <div class="pub-journal">Proceedings of the ACM SIGGHI Conference on Designing Interactive Systems (DIS25), 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/bjir.70025" target="_blank">Building Power from the Bottom Up: How Union Leaders Navigate Power Relations under Algorithmic Management</a></div>
+          <div class="pub-authors">(with Christine Riordan, Yeaseul Hur, Patricia Tabarani, and Deb Figart)</div>
+          <div class="pub-journal">British Journal of Industrial Relations, 2025</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2023.4674" target="_blank">The Gendering of Job Postings in the Online Recruitment Process</a></div>
+          <div class="pub-authors">(with Emilio Castilla)</div>
+          <div class="pub-journal">Management Science, 2023</div>
+          <div class="pub-status">Appeared in The Wall Street Journal</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">Do Workers Speak Up When Feeling Job Insecure? Examining Workers' Response to Precarity During the COVID-19 Pandemic</div>
+          <div class="pub-authors">(with Christine Riordan, Christian L. Ibsen, J. Ryan Lamare, and Maite Tapia)</div>
+          <div class="pub-journal">Work and Occupations, 2023, 50(1): 81–113</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3579466" target="_blank">Charting the Automation of Hospitality: An Interdisciplinary Literature Review</a></div>
+          <div class="pub-authors">(with Franchesca Spektor, Sarah E. Fox, Ezra Awumey, Ben Begleiter, Chinmay Kulkarni, Betsy Stringam, Christine Riordan, Hunter Akridge, and Jodi Forlizzi)</div>
+          <div class="pub-journal">Proceedings of the ACM on Human-Computer Interaction, 2023, 7(CSCW1): 1–20</div>
+          <div class="pub-status">Appeared in a U.S. Senate briefing on AI and work</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://dl.acm.org/doi/abs/10.1145/3563657.3596018" target="_blank">Designing for Wellbeing: Worker-Generated Ideas on Adapting Algorithmic Management in the Hospitality Industry</a></div>
+          <div class="pub-authors">(with Franchesca Spektor, Sarah E. Fox, Ezra Awumey, Christine Riordan, Chinmay Kulkarni, Marlen Martinez-Lopez, Betsy Stringam, Ben Begleiter, and Jodi Forlizzi)</div>
+          <div class="pub-journal">Proceedings of the ACM SIGGHI Conference on Designing Interactive Systems (DIS23), 2023, 623–637</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://www.tandfonline.com/doi/abs/10.1080/05775132.2019.1619043" target="_blank">Nonstandard Work Arrangements and Older Americans, 2005–2017</a></div>
+          <div class="pub-authors">(with Eileen Appelbaum and Arne Kalleberg)</div>
+          <div class="pub-journal">Challenge, 2019, 62(4): 219–241</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title"><a href="https://journals.sagepub.com/doi/abs/10.2190/HS.40.1.a" target="_blank">Ensuring a Healthy and Productive Workforce: Comparing the Generosity of Paid Sick Day and Leave Policies in 22 Countries</a></div>
+          <div class="pub-authors">(with Jody Heymann, John Schmitt, and Alison Earle)</div>
+          <div class="pub-journal">International Journal of Health Services, 2009, 40(1): 1–22</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORKING PAPERS -->
+    <section id="working-papers" class="section section-white">
+      <div class="section-inner">
+        <div class="section-title">Working Papers</div>
+
+        <div class="pub-item">
+          <div class="pub-title black">Brokering Contested Technologies: Stabilizing and Governing Algorithmic Management</div>
+          <div class="pub-authors">(with Christine Riordan, Yeaseul Hur, Patricia Tabarani, and Francesca Spektor)</div>
+          <div class="pub-status">Under Review</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title black">From Rhythms to Stop, Drop, and Roll: Unpacking the Impact of Algorithmic Management on Discretion in Hotel Housekeeping</div>
+          <div class="pub-authors">(with Christine Riordan)</div>
+          <div class="pub-status">Under Review</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title black">Multi-layered Labor Contracting and Price Setting Process for Nonstandard Work</div>
+          <div class="pub-status">Preparing for submission</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title black">Fixing Low-Promotability Work: (In)visibility and Gender Disparity in Giving Feedback</div>
+          <div class="pub-authors">(with Brittany M. Bond and Mabel Abraham)</div>
+          <div class="pub-status">Preparing for submission</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title black">The Role of Nonstandard Work, Economic Insecurity, and Institutions on Health: Evidence from Denmark and the US</div>
+          <div class="pub-authors">(with Christian Ibsen, Ryan Lamare, Christine Riordan, Maite Tapia, Hjalmar Bang Carlsen, and Jonas Toubøl)</div>
+          <div class="pub-status">Preparing for submission</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title black">Job Search of Older Unemployed Workers: Evidence from Longitudinal Data</div>
+          <div class="pub-authors">(with Gokce Basbug and Abdullah Yalaman)</div>
+          <div class="pub-status">Preparing for submission</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title black">How Skill Demands Affect Time-to-Hire: Evidence from Applicant Tracking Data</div>
+          <div class="pub-authors">(with Andrew Weaver)</div>
+          <div class="pub-status">Draft writing stage</div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title black">Understanding the Role of Transparency in the Job Matching Process for Travel Nurses</div>
+          <div class="pub-authors">(with Christine Riordan and Wenjia Cao)</div>
+          <div class="pub-status">Data analysis stage</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- POLICY WORK -->
+    <section id="policy" class="section section-light">
+      <div class="section-inner">
+        <div class="section-title">Policy &amp; Practitioner-Oriented Work (Selected)</div>
+        <p class="policy-intro">Alongside my academic research, I write for policy and practitioner audiences on issues of work, inequality, and labor market policy. Below is a selection of this work, much of it produced during my time at the Center for Economic and Policy Research (CEPR), which has been widely cited in national media and by policymakers.</p>
+
+        <div class="policy-item">
+          <a href="https://cepr.net/labor-market-transitions-of-young-people-during-the-pandemic/" target="_blank">Labor Market Transitions of Young People During the Pandemic</a>
+          <div class="policy-meta">(with Julie Yixia Cai and Shawn Fremstad.) CEPR Report, 2020.</div>
+        </div>
+        <div class="policy-item">
+          <a href="https://cepr.net/multiple-jobholders-who-are-they-and-how-are-they-impacted-by-the-pandemic/" target="_blank">Multiple Jobholders: Who Are They and How Are They Impacted by the Pandemic</a>
+          <div class="policy-meta">(with Shawn Fremstad.) CEPR, 2020. <em>Cited in The New York Times, Chicago Tribune.</em></div>
+        </div>
+        <div class="policy-item">
+          <a href="https://cepr.net/racial-inequality-among-workers-in-frontline-industries-black-workers-are-overrepresented-and-undercompensated/" target="_blank">Racial Inequality Among Workers in Frontline Industries: Black Workers are Overrepresented and Undercompensated</a>
+          <div class="policy-meta">(with Hayley Brown and Shawn Fremstad.) CEPR, 2020. <em>Cited in CBS News, CNBC.</em></div>
+        </div>
+        <div class="policy-item">
+          <a href="https://cepr.net/meatpacking-workers-are-a-diverse-group-who-need-better-protections/" target="_blank">Meatpacking Workers are a Diverse Group Who Need Better Protections</a>
+          <div class="policy-meta">(with Shawn Fremstad and Hayley Brown.) CEPR, 2020. <em>Cited in Politico, The Hill, USA Today; interview with WBEZ Chicago NPR.</em></div>
+        </div>
+        <div class="policy-item">
+          <a href="https://cepr.net/a-basic-demographic-profile-of-workers-in-frontline-industries/" target="_blank">A Basic Demographic Profile of Workers in Frontline Industries</a>
+          <div class="policy-meta">(with Hayley Brown and Shawn Fremstad.) CEPR Report, 2020. <em>Cited in The New York Times, The Atlantic, Vox, CNN Business, Mother Jones, NBC News; cited by NY Governor Andrew Cuomo.</em></div>
+        </div>
+        <div class="policy-item">
+          <a href="https://cepr.net/contagion-nation-2020-united-states-still-the-only-wealthy-nation-without-paid-sick-leave/" target="_blank">Contagion Nation 2020: United States Still the Only Wealthy Nation without Paid Sick Leave</a>
+          <div class="policy-meta">(with Shawn Fremstad and Jared Gaby-Biegel.) CEPR Report, 2020.</div>
+        </div>
+        <div class="policy-item">
+          <a href="https://cepr.net/young-workers-in-nonstandard-work-arrangements-2005-2017/" target="_blank">Young Workers in Nonstandard Work Arrangements, 2005–2017</a>
+          <div class="policy-meta">(with Aaron Medlin.) CEPR Report, 2019.</div>
+        </div>
+        <div class="policy-item">
+          <a href="https://cepr.net/report/hard-work-patterns-in-physically-demanding-labor-among-older-workers/" target="_blank">Hard Work? Patterns in Physically Demanding Labor Among Older Workers</a>
+          <div class="policy-meta">CEPR Briefing Paper, 2010. <em>Cited in The New York Times, CBS Evening News; cited in U.S. Senate testimony.</em></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching" class="section section-white">
+      <div class="section-inner">
+        <div class="section-title">Teaching</div>
+        <p class="teaching-intro">Teaching is central to how I think about my work as a scholar. I believe learning happens through dialogue — when students feel invited to bring their own questions, experiences, and disagreements into the room. My goal is to create that kind of space in every course.</p>
+
+        <div class="course-item">
+          <div class="course-name">Capstone on Human Resources and Labor Relations</div>
+          <div class="course-desc">Designed around student-led discussion and real-world application. Students connect what they've learned across their major to contemporary issues in human resources and labor relations, then apply those ideas to projects with organizations of their choice.</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">Income Inequality</div>
+          <div class="course-desc">Examines the causes and consequences of rising inequality in the United States. Drawing on both empirical research and competing theoretical frameworks, students grapple with fundamental questions about who gets ahead, who gets left behind, and why — and what, if anything, can be done about it.</div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-name">HR and Employment Relations in South Korea</div>
+          <div class="course-desc">A study abroad course in the spring where I travel to South Korea with students for firsthand learning about labor relations institutions, employment practices, and worker organizing. Beyond the academic content, the course is deeply experiential — students engage with Korean workplace culture, visit organizations, and explore how South Korea's economic development and labor history have shaped the world of work there today.</div>
+        </div>
+
+        <div class="korea-photo">
+          <img src="korea-trip.jpg" alt="Study abroad trip to South Korea">
+          <p>Students on the study abroad trip to South Korea, Spring 2025.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preve
