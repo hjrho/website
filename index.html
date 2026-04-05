@@ -24,14 +24,11 @@
     background: #fff;
     border-bottom: 1px solid #e8e8e8;
     z-index: 1000;
-    padding: 0 48px;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
-  .topnav .nav-name { font-size: 15px; font-weight: bold; color: #222; text-decoration: none; }
-  .topnav .nav-name:hover { text-decoration: none; }
   .topnav .nav-links { display: flex; gap: 28px; }
   .topnav .nav-links a { font-size: 13px; color: #555; text-decoration: none; }
   .topnav .nav-links a:hover { color: #1a5494; }
@@ -44,13 +41,13 @@
 
   /* FIXED SIDEBAR */
   .sidebar {
-    width: 220px;
-    min-width: 220px;
+    width: 260px;
+    min-width: 260px;
     position: fixed;
     top: 50px;
     left: 0;
     bottom: 0;
-    padding: 40px 28px;
+    padding: 40px 36px;
     border-right: 1px solid #eeeeee;
     background: #fff;
     overflow-y: auto;
@@ -86,7 +83,7 @@
 
   /* MAIN CONTENT */
   .main-content {
-    margin-left: 220px;
+    margin-left: 260px;
     flex: 1;
   }
 
@@ -95,10 +92,10 @@
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
-    padding: 60px 64px 40px;
+    padding: 80px 64px 40px;
   }
   #about {
-    padding-top: 120px;
+    padding-top: 140px;
   }
   .section-inner {
     max-width: 680px;
@@ -154,8 +151,8 @@
 
 <!-- TOP NAV -->
 <nav class="topnav">
-  <a href="#about" class="nav-name">Hye Jin Rho</a>
   <div class="nav-links">
+    <a href="#about">Home</a>
     <a href="#publications">Publications</a>
     <a href="#working-papers">Working Papers</a>
     <a href="#policy">Policy Work</a>
