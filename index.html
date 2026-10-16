@@ -145,11 +145,11 @@
   .korea-photo p { font-size: 12px; color: #999; margin-top: 6px; }
 
   @media (max-width: 768px) {
-    .page-wrapper { flex-direction: column; }
+    .page-wrapper { flex-direction: column; max-width: 100%; }
     .sidebar {
-      display: block;
       position: static;
       width: 100%;
+      height: auto;
       border-right: none;
       border-bottom: 1px solid #eeeeee;
       padding: 24px 24px 20px;
@@ -161,8 +161,8 @@
     .sidebar img { width: 100px; min-width: 100px; margin-bottom: 0; }
     .sidebar-text { flex: 1; }
     .main-content { margin-left: 0; }
-    .topnav { padding: 0 20px; }
-    .topnav .nav-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .topnav { padding: 0 20px; justify-content: flex-start; }
+    .topnav .nav-links { padding-left: 0; width: auto; max-width: none; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
     .topnav .nav-links a { font-size: 11px; }
     .section { padding: 40px 24px; }
     #about { padding-top: 40px; }
